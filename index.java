@@ -12,10 +12,12 @@ public class index {
     };
 
     public static int tinhLuong(int hours) {
-        if(hours == 8) {
-            return 200000;
+        if(hours < 0 || hours > 24) {
+            return -1;
         } else if(hours < 8) {
             return hours*20000;
+        } else if(hours == 8) {
+            return 200000;
         } else {
             int newhours = hours - 8;
             return (200000 + newhours*30000);
